@@ -10,6 +10,7 @@ from pyVmomi import vim
 import atexit
 import time
 import ssl
+from getpass import getpass
 
 
 def get_obj(content, vimtype, name):
@@ -134,7 +135,7 @@ def main():
    esx_host = 'myesx.lab.local'
    esx_user = 'root'
 
-   password = getpass.getpass(prompt='Enter password for host %s and '
+   password = getpass(prompt='Enter password for host %s and '
                                         'user %s: ' % (esx_host,esx_user))
 
    context = ssl._create_unverified_context()
